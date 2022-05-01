@@ -15,20 +15,40 @@
 
   <div class="container">
     <h2 class="text-center">Biz haqimizda oynasi</h2>
+    <a href="/addabout"><button class="btn btn-primary">Qo'shish</button></a>
     <table class="table table-bordered">
       <thead>
         <tr>
-          <th>Firstname</th>
-          <th>Lastname</th>
-          <th>Email</th>
+          <th>#</th>
+          <th>Sarlavha</th>
+          <th>Text</th>
+          <th>Rasm</th>
+          <th>Action</th>
         </tr>
       </thead>
       <tbody>
+      @foreach($abouts as $item)  
         <tr>
-          <td>John</td>
-          <td>Doe</td>
-          <td>john@example.com</td>
+          <td>{{$loop->index+1}}</td>
+          <td>{{$item->title}}</td>
+          <td>{{$item->text}}</td>
+          <td><img src="{{asset($item->photo)}}" style="width: 100px; height: 60px;"></td>
+          <td>
+          <div class="btn-group">
+               <form action="/editabout" method="post">
+                @csrf
+                  <input type="hidden" name="id" value="{{$item->id}}"> 
+                  <button type="submit" class="btn btn-primary">Tahrirlash</button>
+               </form>   
+               <form action="/deleteabout" method="post">
+                @csrf
+                  <input type="hidden" name="id" value="{{$item->id}}"> 
+                  <button type="submit" class="btn btn-danger">O'chirish</button>
+               </form>
+          </div>
+          </td>
         </tr>
+      @endforeach  
       </tbody>
     </table>
   </div>

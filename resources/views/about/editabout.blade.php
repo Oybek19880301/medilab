@@ -19,20 +19,20 @@
     </div>
     <div class="col-6">
         <h2 class="text-center">Tahrirlash oynasi</h2>
-        <form action="/editarticlescode" method="post" enctype="multipart/form-data">
-          <input type="hidden" name="id" value="{{$articles->id}}">
+        <form action="/editaboutcode" method="post" enctype="multipart/form-data">
+          <input type="hidden" name="id" value="{{$about->id}}">
           @csrf
           <div class="form-group">
             <label for="title">Sarlavha:</label>
-            <input type="text" class="form-control" id="title" placeholder="Nomini kiriting" name="title" value="{{$articles->title}}">
+            <input type="text" class="form-control" id="title" placeholder="Nomini kiriting" name="title" value="{{$about->title}}">
           </div>
           <div class="form-group">
             <label for="text">Text:</label>
-            <input type="text" class="form-control" id="description" placeholder="Textni kiriting" name="text" value="{{$articles->text}}">
+            <input type="text" class="form-control" id="text" placeholder="Textni kiriting" name="text" value="{{$about->text}}">
           </div>
           <div class="form-group">
             <label for="photo">Rasm:</label>
-            <img src="{{asset($articles->photo)}}" style="width: 100px; height: 60px;">
+            <img src="{{asset($about->photo)}}" style="width: 100px; height: 60px;">
             <input type="file" class="form-control" id="photo" name="photo">
           </div>
           <button type="submit" class="btn btn-primary" id="button">Qo'shish</button>
@@ -47,4 +47,5 @@
 </body>
 </html>
 @endsection
+
 

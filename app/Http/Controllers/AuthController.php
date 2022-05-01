@@ -67,7 +67,7 @@ class AuthController extends Controller
         if(empty($user)){
             return redirect('login')->with('error', "Hakkerlik qilmang!");
         }
-        return view('admin.dashboard');
+        return view('layouts.admin');
     }
 
 }

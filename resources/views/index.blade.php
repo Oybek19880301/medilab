@@ -11,7 +11,7 @@
   </section><!-- End Hero -->
 
   <main id="main">
-  @include('why-us')
+  @include('articles')
   @include('about')
   @include('counts') 
   @include('services')
