@@ -18,19 +18,29 @@
     <div class="col-3">
     </div>
     <div class="col-6">
-        <h2 class="text-center">Qo'shish oynasi</h2>
-        <form action="/addaboutcode" method="post" enctype="multipart/form-data">
+        <h2>Tahrirlash oynasi</h2>
+        <form action="/edittestimonialcode" method="post" enctype="multipart/form-data">
+            <input type="hidden" name="id" value="{{$testimonials->id}}">
           @csrf
           <div class="form-group">
-            <label for="title">Sarlavha:</label>
-            <input type="text" class="form-control" id="title" placeholder="Nomini kiriting" name="title">
+            <label for="name">Ism :</label>
+            <input type="text" class="form-control" id="name" name="name" value="{{$testimonials->name}}">
           </div>
           <div class="form-group">
-            <label for="text">Text:</label>
-            <textarea type="text" class="form-control" id="description" placeholder="Textni kiriting" name="text"></textarea>
+            <label for="surname">Familiya :</label>
+            <input type="text" class="form-control" id="surname" name="surname" value="{{$testimonials->surname}}">
+          </div> 
+          <div class="form-group">
+            <label for="profession">Kasbi:</label>
+            <input type="text" class="form-control" id="profession" name="profession" value="{{$testimonials->profession}}">
+          </div>
+          <div class="form-group">
+            <label for="text">Mijoz ta'surotlar:</label>
+            <input type="text" class="form-control" id="text" name="text" value="{{$testimonials->text}}">
           </div>
           <div class="form-group">
             <label for="photo">Rasm:</label>
+            <img src="{{asset($testimonials->photo)}}" style="width: 100px; height: 60px;">
             <input type="file" class="form-control" id="photo" name="photo">
           </div>
           <button type="submit" class="btn btn-primary" id="button">Qo'shish</button>
@@ -45,7 +55,3 @@
 </body>
 </html>
 @endsection
-
-
-
-

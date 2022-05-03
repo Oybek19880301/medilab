@@ -5,7 +5,11 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ArticlesController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\DepartmentController;
-
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\DoctorController;
+use App\Http\Controllers\GalleryController;
+use App\Http\Controllers\TestimonialsController;
+use App\Models\Articlies;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,7 +22,8 @@ use App\Http\Controllers\DepartmentController;
 */
 
 Route::get('/', function () {
-    return view('index');
+    $articlies = Articlies::all();
+    return view('index')->with(['articlies' => $articlies]);
 });
 
 // Login sahifasi 
@@ -41,13 +46,43 @@ Route::post('/addaboutcode',      [AboutController::class, 'store']);
 Route::post('/editabout',         [AboutController::class,  'edit']);
 Route::post('/editaboutcode',     [AboutController::class,  'update']);
 Route::post('/deleteabout',       [AboutController::class,  'destroy']);
-//About tugashi
+// About tugashi
 // Departments
-Route::get('/department',        [DepartmentController::class, 'index']);
+Route::get('/department',          [DepartmentController::class, 'index']);
+Route::get('/adddepartment',       [DepartmentController::class, 'create']);
+Route::post('/adddepartmentcode',  [DepartmentController::class, 'store']);
+Route::post('/editdepartment',     [DepartmentController::class, 'edit']);
+Route::post('/editdepartmentcode', [DepartmentController::class, 'update']);
+Route::post('/deletedepartment',   [DepartmentController::class, 'destroy']);
 //Departments
+// Contact
+Route::get('/contact',             [ContactController::class, 'index']);
+Route::post('/contactcode',        [ContactController::class, 'store']);
+//Contact tugashi
+// Doctor
+Route::get('/doctor',               [DoctorController::class,  'index']);
+Route::get('/adddoctor',            [DoctorController::class,  'create']);
+Route::post('/adddoctorcode',       [DoctorController::class,  'store']);
+Route::post('/editdoctor',          [DoctorController::class,  'edit']);
+Route::post('/editdoctorcode',      [DoctorController::class,  'update']);
+Route::post('/deletedoctor',        [DoctorController::class,  'destroy']);
+//Doctor tugashi
+// Gallery
+Route::get('/gallery',              [GalleryController::class, 'index']);
+Route::get('/addgallery',           [GalleryController::class, 'create']);
+Route::post('/addgallerycode',      [GalleryController::class, 'store']);
+Route::post('/editgallery',         [GalleryController::class, 'edit']);
+Route::post('/editgallerycode',     [GalleryController::class, 'update']);
+//Gallery tugashi
+//Testimomials
+Route::get('/testimonial',          [TestimonialsController::class, 'index']);
+Route::get('/addtestimonial',       [TestimonialsController::class, 'create']);
+Route::post('/addtestimonialcode',  [TestimonialsController::class, 'store']);
+Route::post('/edittestimonial',     [TestimonialsController::class, 'edit']);
+Route::post('/edittestimonialcode', [TestimonialsController::class, 'update']);
+Route::post('/deletetestimonial',   [TestimonialsController::class, 'destroy']);
 
-
-
+//Testimomials tugashi
 
 
 

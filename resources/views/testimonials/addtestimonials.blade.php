@@ -19,15 +19,23 @@
     </div>
     <div class="col-6">
         <h2 class="text-center">Qo'shish oynasi</h2>
-        <form action="/addaboutcode" method="post" enctype="multipart/form-data">
+        <form action="/addtestimonialcode" method="post" enctype="multipart/form-data">
           @csrf
           <div class="form-group">
-            <label for="title">Sarlavha:</label>
-            <input type="text" class="form-control" id="title" placeholder="Nomini kiriting" name="title">
+            <label for="name">Ism :</label>
+            <input type="text" class="form-control" id="name" placeholder="Ism kiriting" name="name">
           </div>
           <div class="form-group">
-            <label for="text">Text:</label>
-            <textarea type="text" class="form-control" id="description" placeholder="Textni kiriting" name="text"></textarea>
+            <label for="surname">Familiya :</label>
+            <input type="text" class="form-control" id="surname" placeholder="Familiya kiriting" name="surname">
+          </div> 
+          <div class="form-group">
+            <label for="profession">Kasbi:</label>
+            <input type="text" class="form-control" id="profession" placeholder="Kasbini kiriting" name="profession">
+          </div>
+          <div class="form-group">
+            <label for="text">Mijoz ta'surotlar:</label>
+            <textarea type="text" class="form-control" id="text" placeholder="Mijoz ta'surotlarini yozing" name="text"></textarea>
           </div>
           <div class="form-group">
             <label for="photo">Rasm:</label>
@@ -45,7 +53,3 @@
 </body>
 </html>
 @endsection
-
-
-
-

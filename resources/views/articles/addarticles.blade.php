@@ -27,7 +27,7 @@
           </div>
           <div class="form-group">
             <label for="text">Text:</label>
-            <input type="text" class="form-control" id="description" placeholder="Textni kiriting" name="text">
+            <textarea type="text" class="form-control" id="description" placeholder="Textni kiriting" name="text"></textarea>
           </div>
           <div class="form-group">
             <label for="photo">Rasm:</label>

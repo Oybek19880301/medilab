@@ -90,25 +90,37 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="/departments" class="nav-link">
+                <a href="/department" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Bo'limlar</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="/doctors" class="nav-link">
+                <a href="/doctor" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Shifokorlar</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="/testimonials" class="nav-link">
+                <a href="/testimonial" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Mijozlar fikri</p>
                 </a>
+              </li>
+              <li class="nav-item">
+                <a href="/contact" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Murojaatlar</p>
+                </a>
+              </li> 
+              <li class="nav-item">
+                <a href="/gallery" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Galleriya</p>
+                </a>
+              </li> 
             </ul>
           </li>
-         
         </ul>
       </nav>
       <!-- /.sidebar-menu -->

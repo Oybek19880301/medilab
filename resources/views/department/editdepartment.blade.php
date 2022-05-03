@@ -18,19 +18,25 @@
     <div class="col-3">
     </div>
     <div class="col-6">
-        <h2 class="text-center">Qo'shish oynasi</h2>
-        <form action="/addaboutcode" method="post" enctype="multipart/form-data">
+        <h2 class="text-center">Tahrirlash oynasi</h2>
+        <form action="/editdepartmentcode" method="post" enctype="multipart/form-data">
+        <input type="hidden" name="id" value="{{$department->id}}">
           @csrf
           <div class="form-group">
-            <label for="title">Sarlavha:</label>
-            <input type="text" class="form-control" id="title" placeholder="Nomini kiriting" name="title">
+            <label for="name">Bo'lim nomi:</label>
+            <input type="text" class="form-control" id="name" placeholder="Nomini kiriting" name="name" value="{{$department->name}}">
+          </div>
+          <div class="form-group">
+            <label for="description">Yozuv:</label>
+            <input type="text" class="form-control" id="description" placeholder="Nomini kiriting" name="description" value="{{$department->description}}">
           </div>
           <div class="form-group">
             <label for="text">Text:</label>
-            <textarea type="text" class="form-control" id="description" placeholder="Textni kiriting" name="text"></textarea>
+            <input type="text" class="form-control" id="text" placeholder="Textni kiriting" name="text" value="{{$department->text}}">
           </div>
           <div class="form-group">
             <label for="photo">Rasm:</label>
+            <img src="{{asset($department->photo)}}" style="width: 100px; height: 60px;">
             <input type="file" class="form-control" id="photo" name="photo">
           </div>
           <button type="submit" class="btn btn-primary" id="button">Qo'shish</button>
@@ -45,7 +51,3 @@
 </body>
 </html>
 @endsection
-
-
-
-

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Articles;
+use App\Models\Articlies;
 
 class ArticlesController extends Controller
 {
@@ -11,7 +11,7 @@ class ArticlesController extends Controller
 // Articles ni  uzatib berish     
     public function index()
     {
-        $articles = Articles::all();
+        $articles = Articlies::all();
         return view('articles.index')->with(['articles' => $articles]);
     }
 
@@ -32,7 +32,7 @@ class ArticlesController extends Controller
             'photo'  => 'required', 
         ]);
         $file = $request->file('photo')->store('images');
-        $articles     = new Articles;
+        $articles     = new Articlies;
         $articles->title = $request->title;
         $articles->text  = $request->text;
         $articles->photo = $file;
@@ -49,7 +49,7 @@ class ArticlesController extends Controller
           'id' => 'required',
       ]);
       
-      $articles = Articles::find($request->id);
+      $articles = Articlies::find($request->id);
       return view('articles.editarticles')->with(['articles' => $articles]);
    } 
 
@@ -63,7 +63,7 @@ class ArticlesController extends Controller
           'text'   => 'required',
       ]);
      
-      $articles = Articles::find($request->id);
+      $articles = Articlies::find($request->id);
       if($request->hasFile('photo')){
         $file = $request->file('photo')->store('images');
         $articles->photo   = $file;
@@ -84,7 +84,7 @@ class ArticlesController extends Controller
           'id'  => 'required',
       ]);
 
-      $articles =Articles::find($request->id);
+      $articles =Articlies::find($request->id);
       $articles->delete();
       return redirect('articles');
    }

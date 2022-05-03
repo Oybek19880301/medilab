@@ -18,19 +18,13 @@
     <div class="col-3">
     </div>
     <div class="col-6">
-        <h2 class="text-center">Qo'shish oynasi</h2>
-        <form action="/addaboutcode" method="post" enctype="multipart/form-data">
+        <h2 class="text-center">Tahrirlash oynasi</h2>
+        <form action="/editgallerycode" method="post" enctype="multipart/form-data">
+        <input type="hidden"  name="id" value="{{$gallery->id}}">
           @csrf
           <div class="form-group">
-            <label for="title">Sarlavha:</label>
-            <input type="text" class="form-control" id="title" placeholder="Nomini kiriting" name="title">
-          </div>
-          <div class="form-group">
-            <label for="text">Text:</label>
-            <textarea type="text" class="form-control" id="description" placeholder="Textni kiriting" name="text"></textarea>
-          </div>
-          <div class="form-group">
             <label for="photo">Rasm:</label>
+            <img src="{{asset($gallery->photo)}}" style="width: 100px; height: 60px;">
             <input type="file" class="form-control" id="photo" name="photo">
           </div>
           <button type="submit" class="btn btn-primary" id="button">Qo'shish</button>
@@ -40,12 +34,6 @@
 </div>
 </div>
 </div>
-
-
 </body>
 </html>
 @endsection
-
-
-
-
